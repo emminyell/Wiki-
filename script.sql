@@ -1,55 +1,42 @@
-CREATE DATABASE wiki;
-
-CREATE TABLE utilisateur (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    Fname VARCHAR(255) NOT NULL,
-    Lname VARCHAR(255) NOT NULL,
+CREATE TABLE users (
+    id_user INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(255) NOT NULL,
+    prenom VARCHAR(255),
     email VARCHAR(255) NOT NULL,
-    pwd VARCHAR(100) NOT NULL,
-    id_role INT NOT NULL
-);
+    password VARCHAR(255),
+    isAdmin BOOLEAN NOT NULL
+) ENGINE=InnoDB;
 
-CREATE TABLE role (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    role VARCHAR(255) NOT NULL
-);
 
-CREATE TABLE wiki(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    content TEXT NOT NULL,
-    id_utilisateur INT NOT NULL,
-    id_category INT NOT NULL,
-    id_tag INT NOT NULL,
-    status boolean not null default 0
-);
+CREATE TABLE categorie (
+    id_categorie INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(255) NOT NULL
+) ENGINE=InnoDB;
 
-CREATE TABLE category(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    categoryName VARCHAR(255)
-);
 
-CREATE TABLE tag(
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    tagName VARCHAR(255)
-);
+CREATE TABLE wiki (
+    id_wiki INT PRIMARY KEY AUTO_INCREMENT,
+    titre VARCHAR(255) NOT NULL,
+    contenu TEXT NOT NULL,
+    date_creation DATE,
+    isAccepted int,
+    id_categorie INT,
+    id_user INT,
+    FOREIGN KEY (id_categorie) REFERENCES categorie(id_categorie),
+    FOREIGN KEY (id_user) REFERENCES users(id_user)
+) ENGINE=InnoDB;
 
-CREATE TABLE tag_wiki(
-    id_tag INT,
+
+CREATE TABLE tag (
+    id_tag INT PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(255) NOT NULL
+) ENGINE=InnoDB;
+
+
+CREATE TABLE wikiTag (
+    id INT PRIMARY KEY AUTO_INCREMENT,
     id_wiki INT,
-    PRIMARY KEY(id_tag,id_wiki)
-);
-ALTER TABLE wiki ADD CONSTRAINT FK_wiki_user
-FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id);
-
-ALTER TABLE wiki ADD CONSTRAINT FK_wiki_category
-FOREIGN KEY (id_category) REFERENCES category(id);
-
-ALTER TABLE tag_wiki ADD CONSTRAINT FK_wiki_tag
-FOREIGN KEY (id_tag) REFERENCES tag(id);
-
-ALTER TABLE tag_wiki ADD CONSTRAINT FK_tag_wiki
-FOREIGN KEY (id_wiki) REFERENCES wiki(id);
-
-ALTER TABLE utilisateur ADD CONSTRAINT FK_user_role
-FOREIGN KEY (id_role) REFERENCES role(id);
+    id_tag INT,
+    FOREIGN KEY (id_wiki) REFERENCES wiki(id_wiki),
+    FOREIGN KEY (id_tag) REFERENCES tag(id_tag)
+) ENGINE=InnoDB;
