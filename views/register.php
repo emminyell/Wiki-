@@ -21,7 +21,7 @@
   
                   <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
   
-                  <form class="mx-1 mx-md-4" method="POST" action="../Controller/AuthController.php">
+                  <form class="mx-1 mx-md-4" name="myForm"  onsubmit ="return validateForm()" method="POST" action="../Controller/AuthController.php">
                    <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
@@ -36,7 +36,7 @@
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example1c">Your fisrt Name</label>
-                        <input type="text" id="prenom" class="form-control" name="prenom"  />
+                        <input type="text" id="nom" class="form-control" name="prenom" required />
                         <span id="nameeror"></span>
                         
                       </div>
@@ -46,7 +46,7 @@
                       <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example3c">Your Email</label>
-                        <input type="text" id="email" class="form-control" name="email"  />
+                        <input type="email" id="email" class="form-control" name="email" required />
                         <span id="emaileror"></span>
                         
                       </div>
@@ -56,14 +56,14 @@
                       <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example4c">Password</label>
-                        <input type="password" id="pass" class="form-control" name="password" />
+                        <input type="password" id="pass" class="form-control" name="password" required />
                         <span id="passeror"></span>
                         
                       </div>
                     </div>
   
                     <div class="form-check d-flex justify-content-center mb-5">
-                      <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                      <input class="form-check-input me-2" type="checkbox" value="" id="agree" required />
                       <label class="form-check-label" for="form2Example3">
                         I agree all statements in <a href="#!">Terms of service</a>
                       </label>
@@ -98,6 +98,6 @@
 </div>
     <!-- Copyright -->
   </section>
-  <script link="../Assets/js/script.js"></script>
+  <script link="http://localhost/Wiki-//Assets/js/script.js"></script>
 </body>
     </html>
