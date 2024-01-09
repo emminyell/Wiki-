@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,20 +49,20 @@
 <body>
 
     <header class="bg-light p-2">
-        <?php  
-    include '../views/header.php'; 
-    ?>
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>
+               <h4>Wiki™</h4>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-warning dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="../logique/logout.php">Logout</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
-    
-    <div class="container-fluid h-custom">
-        <aside class="col-md-2 bg-dark text-light p-4 aside">
-            <ul class="list-unstyled">
-                <li><h5>dashboard</h5></li>
-                <li><a href="">users</a></li>
-                <li><a href="">requests</a></li>
-                <li><a href="">Tags</a></li>
-                <li><a href="">Wikis</a></li>
-            </ul>
-        </aside>
-      
-       
