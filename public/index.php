@@ -115,13 +115,10 @@ include '../views/header.php';
     </section>
 
 
-    <footer class="bg-light text-center p-3">
     <?php  
-include '../views/footer.php'; 
-?>
-    </footer>
+    include '../views/footer.php'; 
+    ?>
 
-   
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>

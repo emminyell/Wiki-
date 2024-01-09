@@ -1,16 +1,12 @@
 <?php
 class Database {
-    public $conn;
-    private $servername;
-    private $username;
-    private $password;
-    private $dbname;
+    private $conn;
+    private $servername ='127.0.0.1:3307';
+    private $username ='root';
+    private $password = '';
+    private $dbname ='wiki';
 
-    public function __construct($servername, $username, $password, $dbname) {
-        $this->servername = $servername;
-        $this->username = $username;
-        $this->password = $password;
-        $this->dbname = $dbname;
+    public function __construct() {
 
         $this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
 

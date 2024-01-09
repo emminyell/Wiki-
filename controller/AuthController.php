@@ -2,7 +2,7 @@
 include('../database/Database.php');
 include('../models/AuthModel.php');
 
-$conn = new Database('127.0.0.1:3307', 'root', '', 'wiki');
+$conn = new Database();
 
 $AuthController = new AuthController($conn);
 $AuthController->register();
@@ -19,17 +19,21 @@ class AuthController
 
     public function login()
     {
+        echo 'hiii';
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $password = isset($_POST['password']) ? $_POST['password'] : '';
             $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-
-            $AuthModel = new AuthModel($this->conn);
-            $AuthModel->setEmail($email);
-            $AuthModel->loginUser($password);
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                echo "Invalid email address";
+            } else {
+                $AuthModel = new AuthModel($this->conn);
+                $AuthModel->setEmail($email);
+                $AuthModel->loginUser($password);
+            }
         } 
     }
     public function register()
-    {
+    {   
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $prenom = isset($_POST['prenom']) ? $_POST['prenom'] : '';
             $nom = isset($_POST['nom']) ? $_POST['nom'] : '';
@@ -48,4 +52,3 @@ class AuthController
         }
 
 }
-?>
