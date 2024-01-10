@@ -1,3 +1,6 @@
+<?php 
+include ('../views/header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,61 +12,69 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa; 
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
         }
 
         header {
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
         }
 
         .container-fluid {
-            height: 95vh; 
+            display: flex;
+            height: 95vh;
         }
 
         .aside {
-            height: 95vh;
+            width: 200px;
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
         }
-       aside li a{
-        text-decoration:none;
-         color:white
-       }
-       aside li{ 
-        padding:10px;
-        margin-bottom:10px;
-        border-radius:5px;
-        transition:.3s;
-       }
-       aside li:hover{
-       
-        background-color:white;
-       }
-        aside li:hover a{
-            color:black;
+
+        .content {
+            flex: 1;
+            padding: 20px;
         }
-       header {
-            background-color: #ffffff; 
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+
+        aside li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        aside li {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: .3s;
+        }
+
+        aside li:hover {
+            background-color: white;
+        }
+
+        aside li:hover a {
+            color: black;
         }
     </style>
 </head>
 
 <body>
 
-    <header class="bg-light p-2">
-        <?php  
-    include '../views/header.php'; 
-    ?>
-    </header>
-    
-    <div class="container-fluid h-custom">
+    <div class="container-fluid">
         <aside class="col-md-2 bg-dark text-light p-4 aside">
             <ul class="list-unstyled">
-                <li><h5>dashboard</h5></li>
-                <li><a href="">users</a></li>
-                <li><a href="">requests</a></li>
-                <li><a href="">Tags</a></li>
-                <li><a href="">Wikis</a></li>
+                <li><h5><a href="Dashbord.php">dashboard</a></h5></li>
+                <li><a href="Tags.php">TAGS</a></li>
+                <li><a href="#">WIKIS</a></li>
+                <li><a href="#">ARCHIVER</a></li>
+                <li><a href="http://localhost/wiki-/views/Categorie.php">CATEGORIES</a></li>
+                <li><a href="#">STATISTIQUES</a></li>
             </ul>
         </aside>
-      
-       
+
+</body>
+
+</html>

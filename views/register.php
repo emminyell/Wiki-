@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
   
-                  <img src=../Assets/images/signup.svg
+                  <img src=../public/Assets/images/signup.svg
                     class="img-fluid" alt="sigup">
   
                 </div>
@@ -89,14 +89,13 @@
           </div>
         </div>
       </div>
-    <div
-    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-warning">
+      <div
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 ">
     <!-- Copyright -->
-    <div class="text-white mb-3 mb-md-0">
+    <div class="text-dark mb-3 mb-md-0">
       Copyright © 2024. All rights reserved.
     </div>
 </div>
-    <!-- Copyright -->
   </section>
   <script link="http://localhost/Wiki-//Assets/js/script.js"></script>
 </body>

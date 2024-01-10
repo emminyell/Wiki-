@@ -1,5 +1,5 @@
 <?php
-class Database {
+class DataBase {
     private $conn;
     private $servername ='127.0.0.1:3307';
     private $username ='root';
