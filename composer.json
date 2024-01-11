@@ -1,0 +1,15 @@
+{
+    "name": "youcode/wiki-sc",
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "emminyell",
+            "email": "140811695+emminyell@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
