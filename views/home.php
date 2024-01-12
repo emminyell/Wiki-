@@ -36,12 +36,47 @@ include('../Views/includes/navbar.php');
             </div>
             <?php endforeach; ?>
         </div>
-            <body>
 
+        <section class=" py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Recent Categories</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner  conatiner-sm">
+                <?php foreach ($allcategories as $categorie): ?>
+                      <div class="card">
+                      <div class="card-body">
+                      <div class="carousel-item active">
+                        <h5 class="font-weight-bold"><?= $categorie['nom'] ?></h5>
+                    </div>
+                   
+                    </div>
+               
+                    <?php endforeach; ?>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
    
 
 
-</body>
+    <?php
+include('../Views/includes/footer.php');
+
+?>
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
@@ -57,3 +92,12 @@ include('../Views/includes/navbar.php');
 <!-- Template Javascript -->
 <script src="../../public/assets/js/main.js"></script>
 
+<!-- caroussel -->
+<script>
+// Initialization for ES Users
+import { Carousel, initMDB } from "mdb-ui-kit";
+
+initMDB({ Carousel });
+</script>
+</body>
+</html>

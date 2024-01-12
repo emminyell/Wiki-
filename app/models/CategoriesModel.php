@@ -1,6 +1,7 @@
 <?php
 namespace app\Models ;
 use app\config\DataBase;
+use PDO;
 
 class CategoriesModel {
 
@@ -16,6 +17,17 @@ class CategoriesModel {
         VALUE (?)");
         $stmt->execute([$nom]);
        
+    }
+    public function getcategories()
+    {
+            $query = "SELECT `nom` FROM `categories` ";  
+             $stm = $this->db->prepare($query);
+            $stm->execute();
+            
+           
+            $res = $stm->fetchAll(PDO::FETCH_ASSOC);
+          
+            return($res);
     }
 }
     
