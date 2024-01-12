@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-  
   <title>Document</title>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
@@ -538,39 +537,6 @@ include('../Views/includes/navbar.php');
         </div>
     </div>
 </section>
-<section>
-<div class="container">
-<h2 class="text-center mb-4">Recent Categories</h2>
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-    <?php $active = true; ?>
-    <?php foreach ($allcategories as $categorie): ?>
-        <div class="carousel-item active">
-            <div class="card text-center">
-                <div class="card-body">
-                    <i class="fas fa-codepen fa-3x mb-3"></i>
-                    <h5 class="card-title"><?= $categorie['nom'] ?></h5>
-                    <p class="card-text">Some description about Card 1.</p>
-                </div>
-                <?php $active = false; ?>
-                <?php endforeach; ?>
-            </div>
-        </div>
-        </div>
-    </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#categoryCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#categoryCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-    </button>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
