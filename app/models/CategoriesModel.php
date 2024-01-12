@@ -29,5 +29,14 @@ class CategoriesModel {
           
             return($res);
     }
+    public function UpdateCategories()
+    {
+            $query = "UPDATE `categories` SET `nom`='?' ";  
+             $stm = $this->db->prepare($query);
+            $stm->execute();
+            $res = $stm->fetchAll(PDO::FETCH_ASSOC);
+          
+            return($res);
+    }
 }
     

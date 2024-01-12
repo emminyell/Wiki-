@@ -47,24 +47,24 @@ class AuthModel
 
 
 
-public function insertUser() {
-  $insert_user_query = "INSERT INTO `users`(`nom`, `email`, `password`, `role`)  VALUES ( ?, ?, ?,'0')";
-
-  $stmt = $this->conn->prepare($insert_user_query);
-var_dump($stmt);
-die();
-  if (!$stmt) {
-      die("Preparation failed: " . $this->conn->error);
+  public function insertUser() {
+    $insert_user_query = "INSERT INTO `users`(`nom`, `email`, `password`, `role`)  VALUES (?, ?, ?, '0')";
+  
+    $stmt = $this->conn->prepare($insert_user_query);
+  
+    if (!$stmt) {
+        die("Preparation failed: " . $this->conn->error);
+    }
+  
+    $stmt->bind_param("sss", $this->nom, $this->email, $this->password);
+  
+    if (!$stmt->execute()) {
+        die("Execute failed: " . $stmt->error);
+    }
+  
+    $stmt->close();
   }
-
-  $stmt->bind_param("ssss", $this->nom, $this->email, $this->password);
-
-  if (!$stmt->execute()) {
-      die("Execute failed: " . $stmt->error);
-  }
-
-  $stmt->close();
-}
+  
 
 
 

@@ -25,13 +25,7 @@ switch ($router) {
         break;
     case 'Signup':
         $controllers = new SignupController;
-        if($_SERVER['REQUEST_METHOD'] == "GET") {
-            $controllers->index();
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $controllers->register();
-        }
+        $controllers->index();
         
         break;
     case 'Login':
