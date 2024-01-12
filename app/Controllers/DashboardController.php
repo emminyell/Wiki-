@@ -76,6 +76,17 @@ class DashboardController
 
         }
     }
+    public function UpdateCategories()
+    {
+        if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+            $tags = new CategoriesModel;
+            $nom = $_POST['nom_categorie'];
+            $tags->UpdateCategories($nom);
+            header("Location:index.php?route=dashboard ");
+
+        }
+    }
 
     public function categoriedelete()
     {
