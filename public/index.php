@@ -6,6 +6,9 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 use app\Controllers\HomeController;
 use app\Controllers\SignupController;
 use app\Controllers\ErrorController;
+use app\Controllers\LoginController;
+
+
 
 
 
@@ -22,12 +25,19 @@ switch ($router) {
         break;
     case 'Signup':
         $controllers = new SignupController;
+        if($_SERVER['REQUEST_METHOD'] == "GET") {
+            $controllers->index();
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            $controllers->register();
+        }
+        
+        break;
+    case 'Login':
+        $controllers = new LoginController;
         $controllers->index();
         break;
-        case 'Login':
-            $controllers = new LoginController;
-            $controllers->index();
-            break;
     case 'dashboard':
         $controllers = new DashboardController;
         $controllers->index();

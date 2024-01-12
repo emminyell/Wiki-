@@ -29,14 +29,13 @@ include('../Views/includes/navbar.php');
                         <p class="card-text text-center text-truncate">
                           <?= $wiki['contenu'] ?>
                         </p>
-                        <a href="#" class="btn btn-warning">Read Wiki Now</a>
+                        <a href="#" class="btn btn-warning">Read Wiki Now </a>
                     </div>
 
                 </div>
             </div>
             <?php endforeach; ?>
         </div>
-
         <section class=" py-5">
         <div class="container">
             <h2 class="text-center mb-4">Recent Categories</h2>
@@ -48,7 +47,6 @@ include('../Views/includes/navbar.php');
                       <div class="carousel-item active">
                         <h5 class="font-weight-bold"><?= $categorie['nom'] ?></h5>
                     </div>
-                   
                     </div>
                
                     <?php endforeach; ?>
