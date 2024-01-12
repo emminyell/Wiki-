@@ -7,22 +7,17 @@ class AuthModel
   public $conn;
   public $email;
   public $password;
-  public $prenom;
   public $nom;
-  public $isAdmin;
+  public $role;
 
 
-  public function __construct($conn) {
-      $this->conn = $conn;
+  public function __construct() {
+      $this->conn = new DataBase();
   }
 
   public function setnom($nom)
   {
     $this->nom = $nom;
-  }
-  public function setprenom($prenom)
-  {
-    $this->prenom = $prenom;
   }
 
   public function setEmail($email)
@@ -40,28 +35,29 @@ class AuthModel
     return $this->password;
   }
 
-  public function setisAdmin($isAdmin)
+  public function setrole($role)
   {
-    $this->isAdmin = $isAdmin;
+    $this->role = $role;
   }
 
-  public function getisAdmin()
+  public function getrole()
   {
-      return $this->isAdmin;
+      return $this->role;
   }
 
 
 
 public function insertUser() {
-  $insert_user_query = "INSERT INTO `users`(`id`, `nom`, `email`, `password`, `role`) VALUES (?, ?, ?, ?,'0')";
+  $insert_user_query = "INSERT INTO `users`(`nom`, `email`, `password`, `role`)  VALUES ( ?, ?, ?,'0')";
 
   $stmt = $this->conn->prepare($insert_user_query);
-
+var_dump($stmt);
+die();
   if (!$stmt) {
       die("Preparation failed: " . $this->conn->error);
   }
 
-  $stmt->bind_param("ssss", $this->nom, $this->prenom, $this->email, $this->password);
+  $stmt->bind_param("ssss", $this->nom, $this->email, $this->password);
 
   if (!$stmt->execute()) {
       die("Execute failed: " . $stmt->error);
@@ -92,7 +88,7 @@ public function loginUser($password)
             exit();
 
           }else if($user['role']=='0'){
-            header('Location: ../views/classes.php');
+            header('Location: ../views/home.php');
             exit();
           }
           

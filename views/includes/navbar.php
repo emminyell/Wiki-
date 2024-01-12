@@ -26,7 +26,7 @@
                         </form>
                     </div>
                     <a href="./index.php?route=Signup" class="btn">Sign Up</a>
-                    <a href="./index.php?route=login" class="btn btn-warning">Login</a>
+                    <a href="./index.php?route=Login" class="btn btn-warning">Login</a>
                 </div>
             </nav>  
         </div>
