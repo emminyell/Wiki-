@@ -11,6 +11,12 @@ class HomeController{
 
         $categories =new CategoriesModel();
         $allcategories=$categories->getcategories();
+
+        $Rcategories =new CategoriesModel();
+        $Rallcategories=$Rcategories->getRecentCategories();
+
+        $Rwikis = new WikisModel;
+        $RallWikis = $Rwikis->getRecentwikis(); 
         
        
         require_once __DIR__.'/../../Views/home.php';
