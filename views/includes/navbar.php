@@ -40,7 +40,7 @@
 </style>
 
 <header>
-    <div class="container-fluid position-relative shadow">
+    <div class="container-fluid position-absolute shadow">
         <div navbar-custom>
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom py-3 py-lg-0 px-0 px-lg-5">
             <a class="navbar-brand me-2" href="#">
