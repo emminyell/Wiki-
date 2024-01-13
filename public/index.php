@@ -32,6 +32,12 @@ switch ($router) {
         $controllers = new LoginController;
         $controllers->index();
         break;
+        
+        break;
+    case 'profile':
+        $controllers = new ProfileController;
+        $controllers->index();
+
     case 'dashboard':
         $controllers = new DashboardController;
         $controllers->index();

@@ -81,9 +81,9 @@ include('../Views/includes/navbar.php');
         <section class="testimonial">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                    <div>
-                        <h1>About Us</h1>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class=" col-lg-4 " >
+                        <h1 class="d-flex justify-content-center align-items-center">About Us</h1>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="quote-wrapper">
