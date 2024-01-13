@@ -193,6 +193,7 @@ table.container__table{
     margin: .7rem 0 !important;
     border-collapse: separate !important;
     border-spacing: 5px !important;
+    background-color:black;
     
     
     
@@ -203,6 +204,7 @@ table.container__table{
     color: #110f16;
     height: 3rem !important;
     border-radius: .2rem;
+    background-color:grey;
     
     
 }
@@ -336,12 +338,12 @@ table.container__table{
                                         </div>
                                         <form action="./index.php?route=wikiaccept" method="post">
                                             <input type="hidden" name="id" value="<?= $wiki['id'] ?>"></br>
-                                            <button type="submit" class="btn btn-outline-warning"
+                                            <button type="submit" class="btn "
                                                 name="isaccept">accepter</button>
                                         </form>
                                         <form action="./index.php?route=wikidelete" method="post">
                                             <input type="hidden" name="id" value="<?= $wiki['id'] ?>">
-                                            <button type="submit" class="btn btn-outline-danger"
+                                            <button type="submit" class="btn "
                                                 name="isaccept">Delete</button>
                                         </form>
                                     </div>
@@ -456,10 +458,10 @@ table.container__table{
                                 <td>
 
 
-                                    <div class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></i></div>
+                                    <div class="btn "><i class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></i></div>
                                     <form action="./index.php?route=tagdelete" method="post">
                                         <input type="hidden" name="id" value="<?= $tag['id'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger"><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></button>
+                                        <button type="submit" class="btn "><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -531,10 +533,10 @@ table.container__table{
                                 <td>
 
 
-                                    <div class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></i></div>
+                                    <div class="btn "><i class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></i></div>
                                     <form action="./index.php?route=categoriedelete" method="post">
                                         <input type="hidden" name="id" value="<?= $categorie['id'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger"><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></button>
+                                        <button type="submit" class="btn "><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -562,8 +564,8 @@ table.container__table{
                 <tr>
                     <td></td>
                     <td>
-                        <div class="btn btn-outline-warning">modifier</div>
-                        <div class="btn btn-outline-danger"><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></div>
+                        <div class="btn ">modifier</div>
+                        <div class="btn "><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></div>
                     </td>
                 </tr>
 
