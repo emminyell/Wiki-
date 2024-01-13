@@ -53,6 +53,7 @@
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
                     <a href="index.php" class="nav-item nav-link active me-4">Home</a>
                     <a href="../profile.php" class="nav-item nav-link active me-4">Profile</a>
+                    <a href="index.html" class="nav-item nav-link active me-4">All Wikis</a>
                     <a href="index.html" class="nav-item nav-link active me-4">Categories</a>
                     <a href="index.html" class="nav-item nav-link active me-4">Tags</a>
                     <form class="search-form d-flex">

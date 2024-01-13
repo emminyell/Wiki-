@@ -36,7 +36,7 @@ switch ($router) {
         break;
     case 'profile':
         $controllers = new ProfileController;
-        $controllers->index();
+        $controllers->profile();
 
     case 'dashboard':
         $controllers = new DashboardController;
