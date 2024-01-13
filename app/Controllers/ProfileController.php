@@ -1,8 +1,8 @@
 <?php 
 namespace app\Controllers;
-class ProfileController {
-    public function profile() {
-        require '../Views/profile.php';
 
+class ProfileController {
+    public function index() {
+        require '../Views/profile.php';
     }
 }
