@@ -7,12 +7,7 @@ use app\Controllers\HomeController;
 use app\Controllers\ErrorController;
 use app\Controllers\AuthController;
 use app\Controllers\ProfileController;
-
-
-
-
-
-
+use app\Controllers\SignupController;
 
 $router = isset($_GET['route']) ? $_GET['route'] : 'home';
 
@@ -26,16 +21,19 @@ switch ($router) {
 
         break;
     case 'Signup':
+        $controllers = new SignupController;
+        $controllers->signup();
+        break;
+    case 'register':
         $controllers = new AuthController;
         $controllers->register();
-        
         break;
+
     case 'Login':
-        $controllers = new AuthController;
-        $controllers->login();
+        $controllers = new SignupController;
+        $controllers->signin();
         break;
         
-        break;
     case 'profile':
         $controllers = new ProfileController;
         $controllers->profile();

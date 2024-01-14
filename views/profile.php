@@ -22,8 +22,8 @@ include('../Views/includes/navbar.php');
   <div class="text-center">
     <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-picture">
     <div class="user-info mt-3">
-      <h2 class="text-light">Camila Smith</h2>
-      <p>deydey@theEmail.com</p>
+      <h2 class="text-light"><?= $_SESSION['user_name'] ?></h2>
+      <p><?= $_SESSION['user_email'] ?></p>
     </div>
   </div>
 
@@ -53,7 +53,7 @@ include('../Views/includes/navbar.php');
     <!-- Statistics Section -->
     <div class="statistics mt-4">
     <h4 class="text-light">Statistics</h4>
-    <p class="text-light">Total Posts: <strong class="text-light">5</strong></p>
+    <p class="text-light">Total Posts: <strong class="text-light"></strong></p>
   </div>
 
   <!-- All Posts Section -->
@@ -76,7 +76,7 @@ include('../Views/includes/navbar.php');
                             <div class="single-schedules-inner">
                                 <div class="date">
                                     <i class="fa fa-clock-o"></i>
-                                    5:00pm -6:30pm
+                                    
                                 </div>
                                 <h5>Improving the quality of the management.</h5>
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua</p>
@@ -86,7 +86,6 @@ include('../Views/includes/navbar.php');
                                     </div>
                                     <div class="media-body align-self-center">
                                         <h6>Dr. Ariful Islam Abid</h6>
-                                        <p>Ceo of AIA software agency, USA.</p>
                                     </div>
                                 </div>
                             </div>

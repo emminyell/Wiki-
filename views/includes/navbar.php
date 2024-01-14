@@ -51,8 +51,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav font-weight-bold mx-auto py-0">
-                    <a href="./index.php?route=index.php" class="nav-item nav-link active me-4">Home</a>
-                    <a href="./index.php?route=profile" class="nav-item nav-link active me-4">Profile</a>
+                    <a href="?route=home" class="nav-item nav-link active me-4">Home</a>
                     <a href="index.html" class="nav-item nav-link active me-4">All Wikis</a>
                     <a href="index.html" class="nav-item nav-link active me-4">Categories</a>
                     <a href="index.html" class="nav-item nav-link active me-4">Tags</a>
@@ -61,8 +60,13 @@
                         <button class="btn btn-outline-warning search-button" type="submit">Search</button>
                     </form>
                 </div>
-                <a href="../index.php?route=Signup" class=" text-light btn btn-circle">Sign Up</a>
-                <a href="../index.php?route=Login" class="btn btn-warning btn-circle">Login</a>
+                <?php if(isset($_SESSION['user_id'])) : ?>
+                    <a href="?route=profile" class="nav-item nav-link active me-4">Profile</a>
+                    <a href="?route=Login" class="btn btn-danger btn-circle">Logout</a>
+                <?php else : ?>
+                    <a href="../index.php?route=Signup" class=" text-light btn btn-circle">Sign Up</a>
+                    <a href="index.php?route=Login" class="btn btn-warning btn-circle">Login</a>
+                <?php endif; ?> 
             </div>
         </nav>
         </div>

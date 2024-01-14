@@ -37,7 +37,7 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form method="POST" action="router.php?action=login">
+        <form method="POST" action="">
         <!-- <form method="POST" action="../Controller/AuthController.php"> -->
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
             <p class="lead fw-normal mb-0 me-3 text-light">Sign in with</p>
@@ -85,7 +85,7 @@
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="submit" class="btn btn-warning btn-lg"
+            <button type="submit" name="signin" class="btn btn-warning btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
             <p class="small fw-bold mt-2 pt-1 mb-0 text-light">Don't have an account? <a href="register.php"
                 class="link-warning">Register</a></p>

@@ -14,24 +14,28 @@ class AuthController extends AuthModel
     public function __construct(){
         $this->user = new AuthModel;
     }
-
-    public function signup(){
-      
-        $this->view('http://localhost/wiki-sc/views/signup.php');
-    }
     public function signin(){
       
-        $this->view('http://localhost/wiki-sc/login.php');
+        $this->view('/../../Views/login.php');
     }
     public function register(){
         $this->RegisterValidation();
         
         $this->user->register();
         
-        header("location: http://localhost/wiki-sc/views/signup.php");
+        require_once __DIR__.'/../../Views/signup.php';
         
     }
+    
     public function login(){
+        
+        // if (isset($_POST)){
+        //     var_dump($_POST);
+        //     die();
+        // }
+            
+        
+        
         $this->LoginValidation();
        $exists = $this->user->login() ;
        if(!$exists){

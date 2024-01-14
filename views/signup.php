@@ -27,13 +27,15 @@
   
                   <p class="text-center text-light h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
   
-                  <form class="mx-1 mx-md-4" name="myForm" method="POST" action="<?= APP_URL ?>app/Controllers/SignupController.php">
+                  <!-- <form class="mx-1 mx-md-4" name="myForm" method="POST" action="<?= APP_URL ?>app/Controllers/SignupController.php"> -->
+                  <form class="mx-1 mx-md-4" method="POST" action="">
                    <div class="d-flex flex-row align-items-center mb-4">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                       <label class="form-label text-light" for="form3Example1c">Your Name</label>
                         <input type="text" id="nom" class="form-control" name="nom"   />
                         <span id="nameeror"></span>
+
                         
                       </div>
                     </div>
@@ -66,7 +68,7 @@
                     </div>
   
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4"">
-                      <button type="submit" class="btn btn-warning btn-lg" >Register</button>
+                      <button type="submit" name="register" class="btn btn-warning btn-lg" >Register</button>
                     </div>
                     <div class="text">
                     <h6 class="text-light">Already have an account? <a class="link-warning" href="login.php">Login now</a></h6>

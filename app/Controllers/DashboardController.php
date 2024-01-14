@@ -4,6 +4,8 @@ namespace app\Controllers;
 use app\Models\CategoriesModel;
 use app\Models\DashboardModel;
 use app\Models\TagsModel;
+session_start();
+
 
 
 class DashboardController

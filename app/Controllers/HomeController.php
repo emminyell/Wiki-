@@ -2,6 +2,8 @@
 namespace app\Controllers;
 use app\Models\WikisModel;
 use app\Models\categoriesModel;
+session_start();
+
 
 class HomeController{
 

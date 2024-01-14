@@ -220,7 +220,7 @@ table.container__table{
                 <div class="menu__profile">
                     <img src="<?= APP_URL ?>public/assets/images/admin_prfl.jpg" alt="">
                 </div>
-                <h4 class="menu__profile__name">oumaima el</h4>
+                <h4 class="menu__profile__name"><?= $_SESSION['user_name'] ?></h4>
             </li>
             <li class="menu__list__item">
                 <a href="">
