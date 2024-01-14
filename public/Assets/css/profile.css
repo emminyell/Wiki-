@@ -1,0 +1,188 @@
+section{
+	background-color:#110f16;
+}
+.cover-photo {
+	height: 300px;
+	background: url('https://via.placeholder.com/1500x300') no-repeat center center;
+	background-size: cover;
+  }
+
+  .profile-picture {
+	width: 150px;
+	height: 150px;
+	border: 8px solid #fff;
+	border-radius: 50%;
+	margin-top: -75px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .user-info {
+	margin-top: 20px;
+	text-align: center;
+  }
+
+  .user-info h2 {
+	margin-bottom: 5px;
+	color: #333;
+  }
+
+  .user-info p {
+	color: #777;
+  }
+
+  .nav-pills-custom {
+	  background-color: #18151f;
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-pills-custom .nav-link {
+	color: white;
+	border-radius: 10px;
+  }
+
+  .nav-pills-custom .nav-link.active {
+	background-color: #FFC107;
+	color: #fff;
+  }
+
+  .timeline {
+	margin-top: 20px;
+  }
+
+  .timeline .card {
+	margin-bottom: 20px;
+	border-radius: 15px;
+	overflow: hidden;
+	
+  }
+
+  .timeline .card-header {
+	background-color: #f8f9fa;
+	border-bottom: 1px solid #dee2e6;
+	border-radius: 15px 15px 0 0;
+  }
+
+  .timeline .card-title {
+	font-size: 20px;
+	color: #555;
+  }
+
+  .timeline .card-text {
+	color: #777;
+  }
+
+  .post-form {
+	margin-top: 20px;
+	background-color: #18151f;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	
+  }
+
+  .post-card-display{
+	margin-bottom: 20px;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	
+	
+  }
+
+  .post-form .card-body {
+	padding: 20px;
+	
+	
+  }
+
+  .post-card .card-body h5.card-title {
+	font-size: 24px;
+	color: #333;
+  }
+
+  .post-card .card-body p.card-text {
+	color: #777;
+  }
+
+  .post-card .btn {
+	margin-top: 10px;
+	border-radius: 5px;
+  }
+
+  .statistics {
+	margin-top: 20px;
+	background-color: #18151f;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	  
+  }
+
+  .statistics p {
+	color: #333;
+  }
+
+  .statistics strong {
+	color: #007bff;
+  }
+
+
+.single-schedules-inner {
+  background-color:#fff;
+box-shadow: 0px 3px 15px 0px rgba(184, 40, 88, 0.08);
+padding: 30px 30px 35px 30px;
+margin-bottom: 30px;
+transition: 0.4s;
+border-radius: 20px;
+}
+.single-schedules-inner .date {
+color: var(--main-color);
+font-size: 14px;
+margin-bottom: 15px;
+}
+.single-schedules-inner .date i {
+color: whitesmoke;
+margin-right: 3px;
+}
+.single-schedules-inner h5 {
+line-height: 36px;
+margin-bottom: 18px;
+}
+.single-schedules-inner .icons {
+margin-bottom: 20px;
+}
+.single-schedules-inner p {
+margin-bottom: 0;
+}
+.single-schedules-inner .media {
+margin-top: 43px;
+}
+.single-schedules-inner .media .media-left {
+margin-right: 15px;
+}
+.single-schedules-inner .media .media-left img {
+height: 60px;
+width: 60px;
+border-radius: 10px;
+}
+.single-schedules-inner .media .media-body h6 {
+font-weight: 500;
+margin-bottom: 0;
+}
+.single-schedules-inner .media .media-body p {
+margin-bottom: 0;
+font-size: 12px;
+font-weight: 500;
+}
+.single-schedules-inner:hover {
+box-shadow: 0px 6px 30px 0px rgba(184, 40, 88, 0.2);
+}
+.single-schedules-inner.lunch-schedules {
+height: 93.1%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+

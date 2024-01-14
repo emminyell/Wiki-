@@ -23,11 +23,6 @@ body {
 	background: #110f16;
 }
 
-
-.light {
-	background: #f3f5f7;
-}
-
 a, a:hover {
 	text-decoration: none;
 	transition: color 0.3s ease-in-out;
@@ -55,10 +50,6 @@ a, a:hover {
 	&.dark {
 		background-color: #18151f;
 	}
-	&.light {
-		background-color: #e1e5ea;
-	}
-	
 	.t-dark {
 		color: #18151f;
 	}
@@ -401,4 +392,198 @@ body .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper h
   body .testimonial .row .tabs {
     margin-right: 25px;
   }
+}
+// cards of categoriessssssssssssssssssssssssssssssssssss
+.category-card {
+  border: 2px solid #0076bd;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.card-img-top {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #0076bd;
+}
+
+.card-text {
+  color: #333;
+}
+
+.cat{
+width: 100vw;
+background-color: #110f16;
+margin: 0;
+font-family: helvetica;
+}
+
+.about {
+$cubic: cubic-bezier(0.64, 0.01, 0.07, 1.65);
+$transition: 0.6s $cubic;
+$size: 40px;
+position: fixed;
+z-index: 10;
+bottom: 10px;
+right: 10px;
+width: $size;
+height: $size;
+transition: all 0.2s ease;
+  .icon {
+     width: 100%;
+     height: 100%;
+     background-size: 20px;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-color: transparent;
+     display: flex;
+     transition: all 0.2s ease, background-color 0.4s ease;
+     opacity: 0;
+     border-radius: 100%;
+  }
+
+&:hover {
+  width: 105px;
+  height: 105px;
+  transition: all $transition;
+
+  .logo{
+     opacity: 1;
+     transition: all 0.6s ease;
+  }
+
+  .social {
+     opacity: 1;
+
+     .icon {
+        opacity: 0.9;
+     }
+
+     &:hover {
+        background-size: 28px;
+        .icon {
+           background-size: 65%;
+           opacity: 1;
+        }
+     }
+
+     
+        }
+     }
+  }
+
+.contents{
+max-width: 1124px;
+width: 100%;
+padding: 0 4%;
+padding-top: 25px;
+margin: 0 auto;
+display:flex;
+flex-wrap: wrap;
+
+}
+
+.cardss {
+width: 100%;
+max-width: 300px;
+min-width: 200px;
+height: 250px;
+background-color: #18151f;
+margin: 10px;
+border-radius: 10px;
+box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+border: 2px solid rgba(7, 7, 7, 0.12);
+font-size: 16px;   
+transition: all 0.3s ease;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+.icons {
+margin: 0 auto;
+width: 100%;
+height: 80px;
+max-width:80px;
+background: linear-gradient(90deg, yellow 0%, #FFC107 40%, rgba(0, 0, 0, 0.28) 60%);
+border-radius: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+transition: all 0.8s ease;
+background-position: 0px;
+background-size: 200px;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+.cardss .titles {
+width: 100%;
+margin: 0;
+text-align: center;
+margin-top: 30px;
+color: white;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 4px;
+}
+
+.cardss .texts {
+width: 80%;
+margin: 0 auto;
+font-size: 13px;
+text-align: center;
+margin-top: 20px;
+color: white;
+font-weight: 200;
+letter-spacing: 2px;
+opacity: 0;
+max-height:0;
+transition: all 0.3s ease;
+}
+
+.cardss:hover {
+height: 270px;
+}
+
+.cardss:hover .info {
+height: 90%;
+}
+
+.cardss:hover .texts {
+transition: all 0.3s ease;
+opacity: 1;
+max-height:40px;
+}
+
+.cardss:hover .icons {
+background-position: -120px;
+transition: all 0.3s ease;
+}
+
+.cardss:hover .icons i {
+background: linear-gradient(90deg, #FFC107, #FFC107);
+-webkit-text-fill-color: transparent;
+opacity: 1;
+transition: all 0.3s ease;
 }

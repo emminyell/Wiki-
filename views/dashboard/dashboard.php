@@ -13,6 +13,203 @@
 
     <link rel="stylesheet" href="public/assets/css/dashb.css">
     <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: #110f16;
+    display: flex;
+    
+}
+
+.menu{
+    width: 3.5rem;
+    height: 100vh;
+    background-color:black;
+    padding: .3rem;
+    color: #fff;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    transition: .5s;
+   
+}
+.menu:hover{
+    width: 17rem;
+  
+}
+
+.menu__list{
+    
+    height: 90%;
+    margin-left: -2.2rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+td{
+    color: black;
+    background-color: black;
+}
+
+.menu__list__item__profile{
+   
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-left: .5rem;
+    gap: 20px;
+
+}
+
+.menu__profile{
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: .7rem;
+    flex-shrink: 0;
+  
+}
+.menu__profile img{
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: solid  white .2rem;
+    border-radius: 50%;
+}
+.menu__profile h3{
+    align-self: flex-start;
+}
+
+
+.menu__list__item a, .menu__list__item__logout a{
+    color: inherit;
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    height: 3rem;
+    padding: 1rem;
+    border-radius: .3rem;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.menu__list__item a:hover{
+    background-color: white;
+    
+}
+.menu__list__item__logout {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+ 
+}
+.menu__list__item__logout a{
+  background-color: red;
+ 
+ 
+}
+.menu__list__item__logout a:hover{
+    background-color: rgb(185, 38, 38);
+}
+
+/* start style of main  */
+
+.container{
+    width: 100%;
+    padding: 1rem;
+}
+
+.container__header{
+    width: 100%;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color:#110f16;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .8rem;
+}
+
+.container__statistique{
+    
+    margin: .7rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.container__statistique__data{
+    flex-basis: 10rem;
+    flex-grow: 1;
+
+    height: 10rem;
+    padding: 1rem;
+    background: #110f16;
+    border-radius: 0.5rem;
+    border-style: solid;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container__statistique__data{
+    font-weight: 900;
+}
+.container__statistique__data i{
+    
+    font-size: 3rem;
+}
+.container__statistique__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container__statistique__info p{
+    font-size: 1.5rem;
+    font-family: serif;
+}
+
+
+p.container__statistique__detail{
+    font-size: 2.5rem;
+}
+
+
+/* style tables */
+table.container__table{
+    width: 100% !important;
+    text-align: center !important;
+    margin: .7rem 0 !important;
+    border-collapse: separate !important;
+    border-spacing: 5px !important;
+    background-color:black;
+    
+    
+    
+}
+
+
+.container__table th , .container__table td{
+    color: #110f16;
+    height: 3rem !important;
+    border-radius: .2rem;
+    background-color:grey;
+    
+    
+}
+
+        </style>
 </head>
 
 <body>
@@ -98,7 +295,7 @@
         </div>
 
 
-        <table class="agent table align-middle bg-white">
+        <table class="agent table align-middle container__table">
             <thead class="bg-light">
                 <tr>
                     <th>titre</th>
@@ -141,12 +338,12 @@
                                         </div>
                                         <form action="./index.php?route=wikiaccept" method="post">
                                             <input type="hidden" name="id" value="<?= $wiki['id'] ?>"></br>
-                                            <button type="submit" class="btn btn-outline-warning"
+                                            <button type="submit" class="btn "
                                                 name="isaccept">accepter</button>
                                         </form>
                                         <form action="./index.php?route=wikidelete" method="post">
                                             <input type="hidden" name="id" value="<?= $wiki['id'] ?>">
-                                            <button type="submit" class="btn btn-outline-danger"
+                                            <button type="submit" class="btn "
                                                 name="isaccept">Delete</button>
                                         </form>
                                     </div>
@@ -167,7 +364,7 @@
                 <i class="fas fa-user-group"></i>
             </div>
 
-            <table class="agent table align-middle bg-white">
+            <table class="agent table align-middle container__table">
             <thead class="bg-light">
                     <tr>
                         <th>nom</th>
@@ -240,7 +437,7 @@
                     </div>
                 </div>
 
-                <table class="agent table align-middle bg-white">
+                <table class="agent table align-middle container__table">
             <thead class="bg-light">
                         <tr>
                             <th>nom</th>
@@ -261,10 +458,10 @@
                                 <td>
 
 
-                                    <div class="btn btn-outline-warning">modifier</div>
+                                    <div class="btn "><i class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></i></div>
                                     <form action="./index.php?route=tagdelete" method="post">
                                         <input type="hidden" name="id" value="<?= $tag['id'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger">supprimer</button>
+                                        <button type="submit" class="btn "><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -315,7 +512,7 @@
                     </div>
                 </div>
 
-                <table class="agent table align-middle bg-white">
+                <table class="agent table align-middle container__table">
             <thead class="bg-light">
                         <tr>
                             <th>nom</th>
@@ -336,10 +533,10 @@
                                 <td>
 
 
-                                    <div class="btn btn-outline-warning">modifier</div>
+                                    <div class="btn "><i class="fa-solid fa-pen-to-square fa-xl" style="color: #FFD43B;"></i></div>
                                     <form action="./index.php?route=categoriedelete" method="post">
                                         <input type="hidden" name="id" value="<?= $categorie['id'] ?>">
-                                        <button type="submit" class="btn btn-outline-danger">supprimer</button>
+                                        <button type="submit" class="btn "><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -367,8 +564,8 @@
                 <tr>
                     <td></td>
                     <td>
-                        <div class="btn btn-outline-warning">modifier</div>
-                        <div class="btn btn-outline-danger">supprimer</div>
+                        <div class="btn ">modifier</div>
+                        <div class="btn "><i class="fa-solid fa-trash fa-xl" style="color: #ba2c2c;"></i></div>
                     </td>
                 </tr>
 

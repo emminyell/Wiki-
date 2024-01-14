@@ -1,106 +1,49 @@
-<?php
-namespace app\Models ;
+<?php 
+
+namespace app\models;
+
+use app\helpers\UserHelper;
 use app\config\DataBase;
-
-class AuthModel
+use PDO;
+class AuthModel extends UserHelper
 {
-  public $conn;
-  public $email;
-  public $password;
-  public $nom;
-  public $role;
 
+    private $db;
 
-  public function __construct() {
-      $this->conn = new DataBase();
-  }
-
-  public function setnom($nom)
-  {
-    $this->nom = $nom;
-  }
-
-  public function setEmail($email)
-  {
-    $this->email = $email;
-  }
-  
-  public function setPassword($password)
-  {
-    $this->password = password_hash($password, PASSWORD_DEFAULT);
-  }
-
-  public function getPassword()
-  {
-    return $this->password;
-  }
-
-  public function setrole($role)
-  {
-    $this->role = $role;
-  }
-
-  public function getrole()
-  {
-      return $this->role;
-  }
-
-
-
-  public function insertUser() {
-    $insert_user_query = "INSERT INTO `users`(`nom`, `email`, `password`, `role`)  VALUES (?, ?, ?, '0')";
-  
-    $stmt = $this->conn->prepare($insert_user_query);
-  
-    if (!$stmt) {
-        die("Preparation failed: " . $this->conn->error);
+    public function __construct(){
+        $this->db = DataBase::getInstance(); // Assuming getInstance() returns an instance of the PDO connection.
     }
-  
-    $stmt->bind_param("sss", $this->nom, $this->email, $this->password);
-  
-    if (!$stmt->execute()) {
-        die("Execute failed: " . $stmt->error);
-    }
-  
-    $stmt->close();
-  }
-  
 
-
-
-public function loginUser($password)
-{
-  // Récupération des données du formulaire :
-  $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-    $fetch_user_query = "SELECT * FROM users WHERE email = ?";
-    $req = $this->conn->prepare($fetch_user_query);
-    $req->bind_param("s", $email);
-    $req->execute();
-    $result = $req->get_result();
-    
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        $hashedPassword = $user['password'];
-
-        if (password_verify($password, $hashedPassword)) {
-          if($user['role']=='1'){
-            header('Location: ../views/admin/dashboard/users.php');
-            exit();
-
-          }else if($user['role']=='0'){
-            header('Location: ../views/home.php');
-            exit();
-          }
-          
-        } else {
-            echo 'Invalid password';
+    public function register(){
+        try {
+            $query = $this->db->getConnection()->prepare("INSERT INTO users (nom, email, password, role) VALUES (:nom, :email, :password, :role)");
+            $query->bindValue(':nom', $this->getNom());
+            $query->bindValue(':email', $this->getEmail());
+            $query->bindValue(':password', $this->getPassword());
+            $query->bindValue(':role', 0);
+            $query->execute();
+        } catch(\PDOException $e) {
+            echo "Error: " . $e->getMessage();
         }
-    } else {
-        echo 'Invalid EMAIL';
+    }
+    public function login(){
+        try{
+            $query = $this->db->getConnection()->prepare("SELECT id, email, password, role FROM users WHERE email = :email and password = :password");  
+            $query->bindValue(':email', $this->getEmail());
+            $query->bindValue(':password', $this->getPassword());
+            
+            $query->execute();
+            $result = $query->fetch(\PDO::FETCH_OBJ);
+            return !empty($result) ? $result : false;
+        }catch(\PDOException $e) {
+            echo "Error: " . $e->getMessage();
+       
+        } 
     }
 
-    $req->close();
-}
+
+    public function logout(){
+        session_destroy();
+    }
 
 }
- ?>

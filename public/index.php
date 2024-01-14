@@ -4,9 +4,11 @@ use app\Controllers\DashboardController;
 define('APP_URL', "http://localhost/wiki-sc/");
 require_once(__DIR__ . '/../vendor/autoload.php');
 use app\Controllers\HomeController;
-use app\Controllers\SignupController;
 use app\Controllers\ErrorController;
-use app\Controllers\LoginController;
+use app\Controllers\AuthController;
+use app\Controllers\ProfileController;
+
+
 
 
 
@@ -24,14 +26,21 @@ switch ($router) {
 
         break;
     case 'Signup':
-        $controllers = new SignupController;
-        $controllers->index();
+        $controllers = new AuthController;
+        $controllers->register();
         
         break;
     case 'Login':
-        $controllers = new LoginController;
-        $controllers->index();
+        $controllers = new AuthController;
+        $controllers->login();
         break;
+        
+        break;
+    case 'profile':
+        $controllers = new ProfileController;
+        $controllers->profile();
+        break;
+
     case 'dashboard':
         $controllers = new DashboardController;
         $controllers->index();

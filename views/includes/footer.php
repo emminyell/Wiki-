@@ -1,18 +1,16 @@
 <style>
-  section{
-	background: #110f16;
+section{
+	background-color: #110f16;
   color:white;
 }
 </style>
+<body>
+
 <!-- Footer -->
-<footer  class="text-center text-lg-start bg-body-tertiary text-muted">
+<footer  class="text-center text-lg-start bg-body-tertiary text-muted footer">
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
-    
-    <!-- Left -->
-
-    <!-- Right -->
+   <div class="footer">
     <div>
       <a href="" class="me-4 text-reset">
         <i class="fab fa-facebook-f"></i>
@@ -108,14 +106,14 @@
       </div>
       <!-- Grid row -->
     </div>
-  </section>
-  <!-- Section: Links  -->
-
+</div>
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
     © 2024 Copyright:
     <a class="text-reset fw-bold" >WIKI.com</a>
   </div>
   <!-- Copyright -->
+  </section>
 </footer>
 <!-- Footer -->
+</body>
