@@ -17,32 +17,32 @@ class AuthController extends AuthModel
 
     public function signup(){
       
-        $this->view('<?= APP_URL ?>views/singup.php');
+        $this->view('http://localhost/wiki-sc/views/signup.php');
     }
     public function signin(){
       
-        $this->view('<?= APP_URL ?>views/login.php');
+        $this->view('http://localhost/wiki-sc/login.php');
     }
     public function register(){
         $this->RegisterValidation();
         
         $this->user->register();
         
-        header("<?= APP_URL ?>views/singup.php");
+        header("location: http://localhost/wiki-sc/views/signup.php");
         
     }
     public function login(){
         $this->LoginValidation();
        $exists = $this->user->login() ;
        if(!$exists){
-        header("location: <?= APP_URL ?>views/login.php");
+        header("location: http://localhost/wiki-sc/views/login.php");
        }else{
            $_SESSION["role"]= $exists->role;
            $_SESSION["id"]= $exists->id;
         if($exists->role){
-            header("location: <?= APP_URL ?>views/dashboard.php");
+            header("location: http://localhost/wiki-sc/views/dashboard.php");
            }else{
-            header("location:<?= APP_URL ?>views/home.php");
+            header("location:http://localhost/wiki-sc/views/home.php");
            }
        }
         
@@ -50,7 +50,7 @@ class AuthController extends AuthModel
 
     public function logout(){
         $this->user->logout();
-        header("location: <?= APP_URL ?>views/login.php");
+        header("location:http://localhost/wiki-sc/views/login.php");
     }
     public function RegisterValidation()
     {
