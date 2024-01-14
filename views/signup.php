@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
   
-                  <img src="<?= APP_URL ?>public/assets/images/signup.svg"
+                  <img src="<?= APP_URL ?>public/assets/images/signupcuate.svg"
                     class="img-fluid" alt="sigup">
   
                 </div>
@@ -88,7 +88,7 @@
       <div
     class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 ">
     <!-- Copyright -->
-    <div class="text-dark mb-3 mb-md-0">
+    <div class="text-light mb-3 mb-md-0">
       Copyright © 2024. All rights reserved.
     </div>
 </div>

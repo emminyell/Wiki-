@@ -11,33 +11,8 @@
   <link rel="stylesheet" href="<?= APP_URL ?>public/Assets/css/style.scss">
 </head>
 <style>
-    .category-card {
-      border: 2px solid #0076bd;
-      border-radius: 10px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .category-card:hover {
-      transform: scale(1.05);
-    }
-
-    .card-img-top {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-    }
-
-    .card-body {
-      padding: 1.25rem;
-    }
-
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #0076bd;
-    }
-
-    .card-text {
-      color: #333;
+    .container .card-body{
+        background-color: #18151f; 
     }
 </style>
 <body>
@@ -77,6 +52,8 @@ include('../Views/includes/navbar.php');
 		</article>
         <?php endforeach; ?>
         </div>
+       
+        </section>
         </section>
         <section class="testimonial">
         <div class="container">
@@ -94,8 +71,46 @@ include('../Views/includes/navbar.php');
                 </div>
             </div>
         </div>
-        </di>
-        <section>
+        </div>
+         <section class="cat">
+   
+   <div class="contents">
+      <!-- card -->
+      <div class="cardss">
+         
+            <div class="icons"><i class="material-icons md-36"></i></div>
+            <p class="titles">Categories</p>
+            <p class="texts">Click to see our categories.</p>
+         
+      </div>
+      <!-- end card -->
+      <!-- card -->
+      <div class="cardss">
+         
+            <div class="icons"><i class="material-icons md-36"></i></div>
+            <p class="titles">Tags</p>
+            <p class="texts">Check all your favourites in one place.</p>
+         
+      </div>
+      <!-- end card -->
+      <!-- card -->
+      <div class="cardss">
+         
+            <div class="icons"><i class="material-icons md-36"></i></div>
+            <p class="titles">Wikis</p>
+            <p class="texts">view all our wikis in our platform.</p>
+         
+      </div>
+      <!-- end card -->
+   
+
+   
+   </div>
+</div>
+
+
+
+    <section>
     <div class="container">
         <h2 class="text-center mb-4">Categories</h2>
         <div id="categoryCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -103,10 +118,10 @@ include('../Views/includes/navbar.php');
                 <?php $active = true; ?>
                 <?php foreach ($allcategories as $categorie): ?>
                     <div class="carousel-item <?= $active ? 'active' : '' ?>">
-                        <div class="card text-center">
+                        <div class="card d-flex text-center">
                             <div class="card-body">
                             
-                                <h4 class="card-title"><?= $categorie['nom'] ?></h4>
+                                <h4 class="card-title text-light""><?= $categorie['nom'] ?></h4>
                            
                             </div>
                         </div>
@@ -133,18 +148,18 @@ include('../Views/includes/navbar.php');
       <!-- Category Card 1 -->
       <?php foreach ($Rallcategories as $Rcategorie): ?>
       <div class="col-md-4 mb-4">
-        <div class="card category-card">
-        
-          <div class="card-body">
-          <i class="fa-solid fa-layer-group fa-xl" style="color: #FFD43B;"></i>
-            <h5 class="card-title"><?= $Rcategorie['nom'] ?></h5>
+          <div class="cardss">
+            <div><i class="fa-solid fa-layer-group fa-xl" style="color: #FFD43B;"></i></div>
+            <h5 class="card-title text-light"><?= $Rcategorie['nom'] ?></h5>
           </div>
-        </div>
       </div>
       <?php endforeach; ?>
       </div>
       </div>
-</section>
+    </section>
+    <section>
+
+    </section>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 

@@ -2,7 +2,7 @@
 namespace app\Controllers;
 
 class ProfileController {
-    public function index() {
+    public function profile() {
         require '../Views/profile.php';
     }
 }
